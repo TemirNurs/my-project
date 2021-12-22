@@ -21,3 +21,21 @@ export const sliderItems = [
     bg:"fbf0f4",
   },
 ];
+
+export const categories = [
+    {
+        id: 1,
+        img: "https://image.freepik.com/free-photo/man-fies-black-bow-tie-white-shirt_8353-52.jpg",
+        title: "SHIRT STYLE"
+    },
+    {
+        id: 2,
+        img: "https://image.freepik.com/free-photo/cute-young-couple-sitting-near-decorated-christmas-tree-having-fun-together-winter-holidays_275834-212.jpg",
+        title: "LOUNGEWEAR LOVE"
+    },
+    {
+        id: 3,
+        img: "https://image.freepik.com/free-photo/little-woman-t-shirt-denim-jacket-showing-namaste-gesture-looking-hopeful_176474-97281.jpg",
+        title: "LIGHT JACKETS"
+    }
+]
