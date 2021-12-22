@@ -39,3 +39,42 @@ export const categories = [
         title: "LIGHT JACKETS"
     }
 ]
+
+export const popularProducts = [
+    {
+        id: 1,
+        img: "https://image.freepik.com/free-photo/top-view-cosmetic-cream-gel-table_23-2148620026.jpg"
+    },
+    {
+        id: 2,
+        img: "https://image.freepik.com/free-photo/top-view-cosmetic-cream-gel-table_23-2148620026.jpg"
+    },
+    {
+        id: 3,
+        img: "https://image.freepik.com/free-photo/top-view-cosmetic-cream-gel-table_23-2148620026.jpg"
+    },
+    {
+        id: 4,
+        img: "https://image.freepik.com/free-photo/top-view-cosmetic-cream-gel-table_23-2148620026.jpg"
+    },
+    {
+        id: 5,
+        img: "https://image.freepik.com/free-photo/top-view-cosmetic-cream-gel-table_23-2148620026.jpg"
+    },
+    {
+        id: 6,
+        img: "https://image.freepik.com/free-photo/top-view-cosmetic-cream-gel-table_23-2148620026.jpg"
+    },
+    {
+        id: 7,
+        img: "https://image.freepik.com/free-photo/top-view-cosmetic-cream-gel-table_23-2148620026.jpg"
+    },
+    {
+        id: 8,
+        img: "https://image.freepik.com/free-photo/top-view-cosmetic-cream-gel-table_23-2148620026.jpg"
+    },
+    {
+        id: 9,
+        img: "https://www.pngall.com/wp-content/uploads/2016/04/T-Shirt-PNG-HD.png"
+    },
+]
