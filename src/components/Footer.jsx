@@ -4,9 +4,11 @@ import styled from "styled-components";
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({flexDirection:"column"})}
 `;
 const Left = styled.div`
   flex: 1;
@@ -38,6 +40,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({display:"none"})}
 `;
 const Title =styled.h3`
     margin-bottom: 30px;
@@ -58,6 +61,7 @@ const ListItem =styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({backgroundColor:"#eee"})}
 `;
 
 const ContactItem = styled.div`
@@ -75,9 +79,7 @@ const Footer = () => {
       <Left>
         <Logo>Sputnik Shop</Logo>
         <Description>
-          Sputnik teams across the company have been working directly with
-          affected employees and their families, as well as local, state, and
-          national organizations. We want to share an update on some of the
+           We want to share an update on some of the
           things we’ve been doing and how others can help. It will require a
           long-term effort, and we will work hard to support everyone who has
           been affected by these devastating storms.
