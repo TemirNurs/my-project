@@ -16,14 +16,19 @@ const Routing = () => {
         id: 1,
       },
       {
-        link: "/products",
+        link: "/products/:category",
         element: <ProductList />,
-        id: 2,
+        id: 7,
       },
       {
         link: "/products/:id",
         element: <Product />,
         id: 3,
+      },
+      {
+        link: "/products",
+        element: <ProductList />,
+        id: 2,
       },
       {
         link: "/cart",
