@@ -1,40 +1,40 @@
-import React from 'react';
-import styled from 'styled-components';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import ManageSearchOutlinedIcon from '@mui/icons-material/ManageSearchOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import React from "react";
+import styled from "styled-components";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ManageSearchOutlinedIcon from "@mui/icons-material/ManageSearchOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const Info = styled.div`
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0, 0.2);
-    z-index: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-    cursor: pointer;
-`
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+`;
 
 const Container = styled.div`
-    flex: 1;
-    margin: 5px;
-    min-width: 280px;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5fbfd;
-    position: relative;
+  flex: 1;
+  margin: 5px;
+  min-width: 280px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5fbfd;
+  position: relative;
 
-&:hover ${Info}{
+  &:hover ${Info} {
     opacity: 1;
-}
-`
+  }
+`;
 
 const Circle = styled.div`
     width: 200px;
@@ -42,46 +42,48 @@ const Circle = styled.div`
     border-radius: 50%
     background-color: white;
     position: absolute;
-`
+`;
 const Img = styled.img`
-    height: 75%;
-    z-index: 2;
-`
+  height: 75%;
+  z-index: 2;
+`;
 
 const Icon = styled.div`
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    transition: all 0.5s ease;
-    &:hover{
-        background-color: #e9f5f5;
-        transform: scale(1.1);
-    }
-`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  transition: all 0.5s ease;
+  &:hover {
+    background-color: #e9f5f5;
+    transform: scale(1.1);
+  }
+`;
 
-const Product = ({item}) => {
-    return (
-        <Container>
-            <Circle />
-            <Img src={item.img} />
-            <Info>
-                <Icon>
-                    <ShoppingCartOutlinedIcon/>
-                </Icon>
-                <Icon>
-                    <ManageSearchOutlinedIcon/>
-                </Icon>
-                <Icon>
-                    <FavoriteBorderOutlinedIcon/>
-                </Icon>
-            </Info>
-        </Container>
-    );
+const Product = ({ item }) => {
+  return (
+    <Container>
+      <Circle />
+      <Img src={item.img} />
+      <Info>
+        <Icon>
+          <ShoppingCartOutlinedIcon />
+        </Icon>
+        <Icon>
+          <Link to={`/product/${item._id}`}>
+            <ManageSearchOutlinedIcon />
+          </Link>
+        </Icon>
+        <Icon>
+          <FavoriteBorderOutlinedIcon />
+        </Icon>
+      </Info>
+    </Container>
+  );
 };
 
 export default Product;
