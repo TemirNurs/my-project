@@ -1,11 +1,12 @@
-import React from 'react';
-import Cart from './pages/Cart';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Routing from "./Routing";
 
 const App = () => {
   return (
-    <div>
-      <Cart />
-    </div>
+    <BrowserRouter>
+      <Routing />
+    </BrowserRouter>
   );
 };
 
