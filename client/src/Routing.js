@@ -7,6 +7,7 @@ import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Success from './pages/Success';
 
 const Routing = () => {
     let PUBLIC_ROUTES = [
@@ -44,6 +45,11 @@ const Routing = () => {
         link: "/auth",
         element: <Register />,
         id: 6
+      },
+      {
+        link: "/success",
+        element: <Success />,
+        id: 8
       },
     ];
     // const ADMIN_ROUTES = [
