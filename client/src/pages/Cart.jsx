@@ -1,5 +1,6 @@
 import { Add, Remove } from "@mui/icons-material";
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -134,6 +135,7 @@ const Button = styled.button`
 `
 
 const Cart = () => {
+  const cart = useSelector(state=>state.cart)
   return (
     <Container>
       <Navbar />
@@ -150,67 +152,43 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            <Product>
+            {cart.products.map(product=>(
+              <Product>
               <ProductDetails>
-                <Image src="https://image.freepik.com/free-photo/mother-with-baby-daughter-dacorating-christmas-tree_1303-29386.jpg" />
+                <Image src={product.img} />
                 <Details>
                   <ProductName>
-                    <b>Product:</b> SPUTNIK CRISTMAS TREES
+                    <b>Product:</b> {product.title}
                   </ProductName>
                   <ProductId>
                     {" "}
-                    <b>ID:</b> 25289592757243
+                    <b>ID:</b> {product._id}
                   </ProductId>
-                  <ProductColor color="green" />
+                  <ProductColor color={product.color} />
                   <ProductSize>
                     {" "}
-                    <b>Size:</b> 37.5{" "}
+                    <b>Size:</b> {product.size}
                   </ProductSize>
                 </Details>
               </ProductDetails>
               <PriceDetail>
                 <ProductAmountContainer>
                   <Add />
-                  <ProductAmount>2</ProductAmount>
+                  <ProductAmount>{product.quantity}</ProductAmount>
                   <Remove />
                 </ProductAmountContainer>
-                <ProductPrice>$ 30</ProductPrice>
+                <ProductPrice>$ {product.price*product.quantity}</ProductPrice>
               </PriceDetail>
             </Product>
+            ))}
             <Hr />
-            <Product>
-              <ProductDetails>
-                <Image src="https://image.freepik.com/free-photo/mother-with-baby-daughter-dacorating-christmas-tree_1303-29386.jpg" />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> SPUTNIK CRISTMAS TREES
-                  </ProductName>
-                  <ProductId>
-                    {" "}
-                    <b>ID:</b> 25289592757243
-                  </ProductId>
-                  <ProductColor color="green" />
-                  <ProductSize>
-                    {" "}
-                    <b>Size:</b> 37.5{" "}
-                  </ProductSize>
-                </Details>
-              </ProductDetails>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 30</ProductPrice>
-              </PriceDetail>
-            </Product>
+            
           </Info>
           <Summary>
             <SummeryTitle>ORDER SUMMARY</SummeryTitle>
             <SummeryItem>
               <SummeryItemText>Subtotal</SummeryItemText>
-              <SummeryItemPrice>$ 80</SummeryItemPrice>
+              <SummeryItemPrice>$ {cart.total}</SummeryItemPrice>
             </SummeryItem>
             <SummeryItem>
               <SummeryItemText>Estimated Shipping</SummeryItemText>
@@ -222,7 +200,7 @@ const Cart = () => {
             </SummeryItem>
             <SummeryItem type="total" >
               <SummeryItemText>Total</SummeryItemText>
-              <SummeryItemPrice>$ 80</SummeryItemPrice>
+              <SummeryItemPrice>$ {cart.total}</SummeryItemPrice>
             </SummeryItem>
             <Button>CHECKOUT NOW</Button>
           </Summary>
